@@ -1,11 +1,34 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export default function Table() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(10);
+    // console.log(setItemsPerPage);
 
     const handleAddDataClick = () => {
         navigate('/form');
+    };
+
+    // pagination functions ------------------------------------------------------------------------------------------------------------------------------
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+    const currentItems = filteredData.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    const prevPage = () => {
+        setCurrentPage(currentPage - 1);
     };
 
     return (
@@ -63,7 +86,7 @@ export default function Table() {
                         <tbody>
                             {currentItems.map((item, index) => (
                                 <tr key={index}>
-                                    <td>{index + 1}</td>
+                                    <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
                                     <td>{item.unid}</td>
                                     <td>{item.firstname}</td>
                                     <td>{item.lastname}</td>
@@ -77,6 +100,22 @@ export default function Table() {
                             ))}
                         </tbody>
                     </table>
+                </div>
+                <div className='pagination-btns'>
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={prevPage}
+                        className='btn btn-primary me-2 previous-btn'
+                    >
+                        Previous Page
+                    </button>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={nextPage}
+                        className='btn btn-primary next-btn'
+                    >
+                        Next Page
+                    </button>
                 </div>
             </div>
         </>
