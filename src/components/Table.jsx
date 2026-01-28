@@ -29,7 +29,7 @@ export default function Table() {
     .filter(
       (item) =>
         item.firstname.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.lastnaem.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.lastname.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.email.toLowerCase().includes(searchQuery.toLowerCase())
     )
     .filter(
