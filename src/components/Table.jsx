@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function Table() {
+    const navigate = useNavigate();
+
+    const handleAddDataClick = () => {
+        navigate('/form');
+    };
+
     return (
         <>
             <div className='mt-5 '>
@@ -8,6 +15,7 @@ export default function Table() {
                     <div className='add_btn mt-1 mb-2 d-flex justify-content-around'>
                         <button
                             className='btn btn-primary'
+                            onClick={handleAddDataClick}
                             autoFocus
                         >
                             Add Data
