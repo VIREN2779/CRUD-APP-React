@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Form from './components/Form';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Table from './components/Table';
 
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Table data={data} />} />
+        <Route path='/form' element={<Form onSubmit={handleFormSubmit} />} />
       </Routes>
     </Router>
   );
