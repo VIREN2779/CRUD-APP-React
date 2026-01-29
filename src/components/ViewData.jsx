@@ -1,6 +1,6 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ViewData() {
     const param = useParams();
@@ -9,11 +9,23 @@ export default function ViewData() {
         state.data.find((user) => user.unid === param.id)
     );
 
+    const navigate = useNavigate();
+    function formBtnOpenTable() {
+        navigate('/');
+    }
+
     return (
         <>
             <div className='container main mt-5'>
                 <div>
                     <form className='container'>
+                        <button
+                            type='button'
+                            className='btnCloseForm'
+                            onClick={formBtnOpenTable}
+                        >
+                            X
+                        </button>
                         <div className='form-group'>
                             <label htmlFor='uid' className='idLabel mt-5 '>
                                 Id
