@@ -12,7 +12,7 @@ const intialData = [
         firstname: 'virat',
         lastname: 'kohli',
         email: 'test2@gmail.com',
-        stateSelect: 'Delhi',
+        stateSelect: 'Kerala',
         xender: 'Female',
     },
     {
@@ -20,7 +20,7 @@ const intialData = [
         firstname: 'pranav',
         lastname: 'dube',
         email: 'test3@gmail.com',
-        stateSelect: 'MP',
+        stateSelect: 'Goa',
         xender: 'Male',
     },
     {
