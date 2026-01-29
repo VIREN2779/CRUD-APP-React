@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { deleteUserData } from '../app/UserSlice';
 
 export default function Table() {
   const navigate = useNavigate();
@@ -14,6 +15,10 @@ export default function Table() {
 
   const handleAddDataClick = () => {
     navigate('/form');
+  };
+  // Delete Data---------------------------------------------------------------------------------------------------------------------------------
+  const handleDeleteData = (unid) => {
+    dispatch(deleteUserData({ unid }));
   };
   // search Data---------------------------------------------------------------------------------------------------------------------------------
   const inputRef = useRef(null);
@@ -141,6 +146,12 @@ export default function Table() {
                       <i className='fa-solid fa-eye fa-1x'></i>
                       View
                     </Link>
+                    <button
+                      className='btn btn-danger'
+                      onClick={() => handleDeleteData(item.unid)}
+                    >
+                      <i className='fa-solid fa-circle-xmark'></i>Delete
+                    </button>
                   </td>
                 </tr>
               ))}

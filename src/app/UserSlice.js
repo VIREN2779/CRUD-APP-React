@@ -7,8 +7,13 @@ export const userSlice = createSlice({
     reducers: {
         addUserData(state, action) {
             state.push(action.payload);
+        },
+        deleteUserData(state, action) {
+            const newState = state.filter(
+                (item) => item.unid !== action.payload.unid
+            );
+            return newState;
         }
-   
     },
 });
 
