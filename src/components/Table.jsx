@@ -135,7 +135,7 @@ export default function Table() {
                   <td>{item.xender}</td>
                   <td className='headerStatus'>
                     <Link
-                      to={`./viewForm/${item.unid}`}
+                      to={`./viewData/${item.unid}`}
                       className='btn btn-primary'
                     >
                       <i className='fa-solid fa-eye fa-1x'></i>

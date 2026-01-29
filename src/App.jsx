@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Table data={data} />} />
         <Route path='/form' element={<Form onSubmit={handleFormSubmit} />} />
-        <Route path='/viewForm/:id' element={<ViewData />} />
+        <Route path='/viewData/:id' element={<ViewData />} />
       </Routes>
     </Router>
   );
