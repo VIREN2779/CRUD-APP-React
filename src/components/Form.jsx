@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUserData } from '../app/UserSlice';
 
 export default function Form() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [formData, setFormData] = useState({
         unid: '',
@@ -22,9 +25,7 @@ export default function Form() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-
-        console.log("data submitted successfully");
-        
+        dispatch(addUserData(formData));
         navigate('/');
     };
 
@@ -123,7 +124,9 @@ export default function Form() {
                                 onChange={handleFormChange}
                                 value={formData.stateSelect}
                             >
-                                <option className='select-your-state'></option>
+                                <option className='select-your-state'>
+                                    ---Please select your state---
+                                </option>
                                 <option value='Gujarat'>Gujarat</option>
                                 <option value='Maharashtra'>Maharashtra</option>
                                 <option value='Rajasthan'>Rajasthan</option>
