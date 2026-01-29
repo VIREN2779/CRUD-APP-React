@@ -17,7 +17,7 @@ export default function Table() {
   };
   // search Data---------------------------------------------------------------------------------------------------------------------------------
   const inputRef = useRef(null);
-  
+
   const searchUserData = () => {
     setSearchQuery(inputRef.current.value);
     console.log("search");
@@ -41,7 +41,7 @@ export default function Table() {
   const filterUser = (e) => {
     setXenderFilter(e.target.value);
   };
-  
+
 
   // pagination functions ------------------------------------------------------------------------------------------------------------------------------
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
@@ -71,7 +71,7 @@ export default function Table() {
             >
               Add Data
             </button>
-           <form className='form d-flex ' onSubmit={(e) => e.preventDefault()}>
+            <form className='form d-flex ' onSubmit={(e) => e.preventDefault()}>
               <input
                 className='form-control'
                 id='search'
@@ -82,7 +82,7 @@ export default function Table() {
                 ref={inputRef}
                 onChange={searchUserData}
               />
-            </form> 
+            </form>
             <div className='tablestatus'>
               <div className='form-check'>
                 <input
