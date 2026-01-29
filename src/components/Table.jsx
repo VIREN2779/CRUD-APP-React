@@ -134,7 +134,13 @@ export default function Table() {
                   <td>{item.stateSelect}</td>
                   <td>{item.xender}</td>
                   <td className='headerStatus'>
-                                        status
+                    <Link
+                      to={`./viewForm/${item.unid}`}
+                      className='btn btn-primary'
+                    >
+                      <i className='fa-solid fa-eye fa-1x'></i>
+                      View
+                    </Link>
                   </td>
                 </tr>
               ))}
