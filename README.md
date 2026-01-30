@@ -24,17 +24,6 @@ This project demonstrates basic frontend CRUD operations with modern React tooli
 
 ---
 
-## ✨ Features
-
-- Create records
-- Read / list records
-- Update existing records
-- Delete records
-- Responsive UI
-- Fast global hosting via Cloudflare Pages
-
----
-
 ## 📦 Project Setup (Run Locally)
 
 ### 1️⃣ Clone repository
@@ -44,15 +33,11 @@ git clone https://github.com/VIREN2779/CRUD-APP-React.git
 cd CRUD-APP-React
 ````
 
----
-
 ### 2️⃣ Install dependencies
 
 ```bash
 npm install
 ```
-
----
 
 ### 3️⃣ Start development server
 
@@ -65,8 +50,6 @@ Open browser:
 ```
 http://localhost:5173
 ```
-
----
 
 ### 4️⃣ Build for production
 
@@ -86,50 +69,18 @@ dist/
 
 This project is deployed using **Cloudflare Pages**.
 
-### Build Settings:
+## 💰 Cloudflare Pages Pricing
 
-* **Build command**
-
-```
-npm run build
-```
-
-* **Build output directory**
-
-```
-dist
-```
-
-No Wrangler or Worker configuration is required for this project.
-
-Cloudflare Pages automatically deploys static assets.
-
----
-
-## 💰 Cloudflare Pages Free Pricing (For Reference)
-
-Cloudflare Pages provides a generous free tier:
-
-### ✅ Free Plan Includes:
-
+* 100,000 requests per day (Across all of your Worker scripts, UTC+0)
+* Observability events 2,00,000/day
+* workers build minutes 3,000/month
 * Unlimited static sites
-* Automatic HTTPS
-* Global CDN
-* Up to **500 builds per month**
-* Up to **100 custom domains**
-
-(Backend Workers, KV, D1, etc. have separate limits.)
-
----
 
 ## 👨‍💻 Author
 
 Viren Patadiya
 
----
 
 ## 📜 License
 
 This project is open-source and available under the MIT License.
-
-```
