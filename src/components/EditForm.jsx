@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { editUserData } from '../app/UserSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 
 export default function EditForm() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const param = useParams();
 
     const user = useSelector((state) =>
@@ -23,6 +25,16 @@ export default function EditForm() {
     const handleEditFormSubmit = (e) => {
         e.preventDefault();
         alert('User data updated successfully.')
+        dispatch(
+            editUserData({
+                unid: param.id,
+                firstname,
+                lastname,
+                email,
+                stateSelect,
+                xender,
+            })
+        );
         navigate('/');
     };
 

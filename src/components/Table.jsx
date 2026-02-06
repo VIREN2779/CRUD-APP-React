@@ -146,6 +146,13 @@ export default function Table() {
                       <i className='fa-solid fa-eye fa-1x'></i>
                       View
                     </Link>
+                    <Link
+                      to={`./edit/${item.unid}`}
+                      className='btn btn-success'
+                    >
+                      <i className='fa-regular fa-pen-to-square'></i>
+                      Edit
+                    </Link>
                     <button
                       className='btn btn-danger'
                       onClick={() => handleDeleteData(item.unid)}
