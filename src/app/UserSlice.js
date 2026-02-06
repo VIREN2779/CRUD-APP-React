@@ -8,6 +8,14 @@ export const userSlice = createSlice({
         addUserData(state, action) {
             state.push(action.payload);
         },
+        editUserData(state, action) {
+            const { unid, firstname, lastname, email, stateSelect, xender } = action.payload;
+            return state.map((user) =>
+                user.unid === unid
+                    ? { ...user, firstname, lastname, email, stateSelect, xender }
+                    : user
+            );
+        },
         deleteUserData(state, action) {
             const newState = state.filter(
                 (item) => item.unid !== action.payload.unid
@@ -17,5 +25,5 @@ export const userSlice = createSlice({
     },
 });
 
-export const { addUserData, deleteUserData } = userSlice.actions;
+export const { addUserData, editUserData, deleteUserData } = userSlice.actions;
 export default userSlice.reducer;
