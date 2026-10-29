@@ -10,7 +10,7 @@ This project demonstrates basic frontend CRUD operations with modern React tooli
 
 ## 🌐 Live Demo
 
-👉 https://crud-react-app.pages.dev  
+👉 https://crud-react-app.pages.dev
 
 ---
 
